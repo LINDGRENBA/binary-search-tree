@@ -27,6 +27,10 @@ describe ('binarySearchTree', () => {
     expect(pbst.search(2)).toEqual(true);
   });
 
+  test('should return true if the tree includes 7', () => {
+    expect(pbst.search(7)).toEqual(true);
+  });
+
 
   test('should initialize a binary search tree with a root of null', () => {
     let bst = new BST();
