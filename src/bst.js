@@ -32,6 +32,22 @@ export default class BST {
   }
 
   search(value) {
-    return true;
+    if(this.root.data === value) {
+      return true;
+    } else {
+      let currentNode = this.root;
+      while(true) {
+        if(currentNode.data === value) {
+          return true;
+        } else if (currentNode.data > value) {
+          currentNode = currentNode.left;
+          if (currentNode === null) {
+            return false;
+          }
+        } else if (currentNode.data < value) {
+          return false;
+        }
+      }
+    }
   }
 }
