@@ -3,6 +3,22 @@ import BSTNode from '../src/bst-node.js';
 
 describe ('binarySearchTree', () => {
 
+  const pbst = new BST();
+
+  beforeEach(() => {
+    pbst.insertNode(new BSTNode(4));
+    pbst.insertNode(new BSTNode(2));
+    pbst.insertNode(new BSTNode(6));
+    pbst.insertNode(new BSTNode(1));
+    pbst.insertNode(new BSTNode(3));
+    pbst.insertNode(new BSTNode(5));
+    pbst.insertNode(new BSTNode(7));
+  });
+
+  test('should return true if the root node is equal to 4', () => {
+    expect(pbst.search(4)).toEqual(true);
+  });
+
   test('should initialize a binary search tree with a root of null', () => {
     let bst = new BST();
     expect(bst.root).toEqual(null);
