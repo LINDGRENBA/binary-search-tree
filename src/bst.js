@@ -57,7 +57,10 @@ export default class BST {
     } else if(this.root.data !== value) {
       return false;
     } else if (this.root.data === value) {
-      return true;
+        if(this.root.left === null && this.root.right === null) {
+          this.root.data = null;
+          return this;
+        }
       }
     }
 }

@@ -121,7 +121,10 @@ describe ('binarySearchTree', () => {
       expect(pbst.remove(8)).toEqual(false);
     });
 
-    test('should return true if the node does exist', () => {
-      expect(pbst.remove(4)).toEqual(true);
+    test('should remove the root node if it is the only node in the BST', () => {
+      let bst = new BST();
+      let rootNode = new BSTNode(36);
+      bst.insertNode(rootNode);
+      expect(bst.remove(36)).toEqual({"root": {"data": null, "left": null, "right": null}});
     });
 });
