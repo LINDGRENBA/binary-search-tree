@@ -112,6 +112,11 @@ describe ('binarySearchTree', () => {
     // tests for remove method
     // 4, 2, 6, 1, 3, 5, 7
 
+    test('should return false if no nodes exist', () => {
+      let bst = new BST();
+      expect(bst.remove()).toEqual(false);
+    });
+
     test('should return false if the node to be removed does not exist', () => {
       expect(pbst.remove(8)).toEqual(false);
     });

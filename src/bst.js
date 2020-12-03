@@ -52,9 +52,11 @@ export default class BST {
   }
 
   remove(value) {
-    if(this.root.data !== value) {
+    if(this.root === null) {
       return false;
-    } else {
+    } else if(this.root.data !== value) {
+      return false;
+    } else if (this.root.data === value) {
       return true;
       }
     }
