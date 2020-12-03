@@ -54,13 +54,32 @@ export default class BST {
   remove(value) {
     if(this.root === null) {
       return false;
-    } else if(this.root.data !== value) {
+    }
+
+    if (!value) {
+      if(this.root.left === null && this.root.right === null) {
+        this.root.data = null;
+        return this;
+      } 
+        // else {
+        //   let currentNode = this.root;
+        //   while(true) {
+        //     if(currentNode.left !== null) {
+        //       currentNode = currentNode.left;
+        //     } else {
+        //       currentNode.data = null;
+        //       return this;
+        //     }
+        //   }
+        // }
+
+    } else if (this.root.data !== value) {
       return false;
-    } else if (this.root.data === value) {
-        if(this.root.left === null && this.root.right === null) {
-          this.root.data = null;
-          return this;
-        }
+    }
+    
+    // else if(this.root.data !== value) {
+    //   // if there is a value and it's not the root node
+    //   return false;
+    // } 
       }
     }
-}

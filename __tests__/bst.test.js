@@ -4,6 +4,7 @@ import BSTNode from '../src/bst-node.js';
 describe ('binarySearchTree', () => {
 
   const pbst = new BST();
+  const rbst = new BST();
 
   beforeEach(() => {
     pbst.insertNode(new BSTNode(4));
@@ -13,6 +14,12 @@ describe ('binarySearchTree', () => {
     pbst.insertNode(new BSTNode(3));
     pbst.insertNode(new BSTNode(5));
     pbst.insertNode(new BSTNode(7));
+  });
+
+  beforeEach(() => {
+    rbst.insertNode(new BSTNode(4));
+    rbst.insertNode(new BSTNode(2));
+    rbst.insertNode(new BSTNode(6));
   });
 
 
@@ -111,6 +118,7 @@ describe ('binarySearchTree', () => {
 
     // tests for remove method
     // 4, 2, 6, 1, 3, 5, 7
+    // 4, 2, 6
 
     test('should return false if no nodes exist', () => {
       let bst = new BST();
@@ -125,6 +133,10 @@ describe ('binarySearchTree', () => {
       let bst = new BST();
       let rootNode = new BSTNode(36);
       bst.insertNode(rootNode);
-      expect(bst.remove(36)).toEqual({"root": {"data": null, "left": null, "right": null}});
+      expect(bst.remove()).toEqual({"root": {"data": null, "left": null, "right": null}});
     });
+
+    // test('should remove the left leaf node in a BST with a height of 1', () => {
+    //   expect(rbst.remove()).toEqual({"root": {"data": 4, "left": null, "right": 6}})
+    // });
 });
