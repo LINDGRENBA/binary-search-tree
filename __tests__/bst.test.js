@@ -15,23 +15,8 @@ describe ('binarySearchTree', () => {
     pbst.insertNode(new BSTNode(7));
   });
 
-  test('should return true if the root node is equal to 4', () => {
-    expect(pbst.search(4)).toEqual(true);
-  });
 
-  test('should return false if the root node is equal to 31', () => {
-    expect(pbst.search(31)).toEqual(false);
-  });
-
-  test('should return true if the first child node on the left is equal to 2', () => {
-    expect(pbst.search(2)).toEqual(true);
-  });
-
-  test('should return true if the tree includes 7', () => {
-    expect(pbst.search(7)).toEqual(true);
-  });
-
-
+  // tests to create BST and insert nodes
   test('should initialize a binary search tree with a root of null', () => {
     let bst = new BST();
     expect(bst.root).toEqual(null);
@@ -102,4 +87,36 @@ describe ('binarySearchTree', () => {
     let node2 = new BSTNode(36);
     expect(bst.insertNode(node2)).toEqual({"root": {"data": 36, "left": null, "right": null}});
   });
+
+    // tests for search method
+    test('should return true if the root node is equal to 4', () => {
+      expect(pbst.search(4)).toEqual(true);
+    });
+  
+    test('should return false if the root node is equal to 31', () => {
+      expect(pbst.search(31)).toEqual(false);
+    });
+  
+    test('should return true if the first child node on the left is equal to 2', () => {
+      expect(pbst.search(2)).toEqual(true);
+    });
+  
+    test('should return true if the tree includes 7', () => {
+      expect(pbst.search(7)).toEqual(true);
+    });
+  
+    test('should return true if the tree includes 5', () => {
+      expect(pbst.search(5)).toEqual(true);
+    });
+
+    // tests for remove method
+    // 4, 2, 6, 1, 3, 5, 7
+
+    test('should return false if the node to be removed does not exist', () => {
+      expect(pbst.remove(8)).toEqual(false);
+    });
+
+    test('should return true if the node does exist', () => {
+      expect(pbst.remove(4)).toEqual(true);
+    });
 });

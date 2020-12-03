@@ -50,4 +50,12 @@ export default class BST {
       }
     }
   }
+
+  remove(value) {
+    if(this.root.data !== value) {
+      return false;
+    } else {
+      return true;
+      }
+    }
 }
